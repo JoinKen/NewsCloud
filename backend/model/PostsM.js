@@ -17,7 +17,7 @@ var Posts = function(post) {
   // }
 };
 Posts.getAllPost = function(result) {
-  mysql.query("SELECT * FROM news.posts;", function(err, res) {
+  mysql.query("SELECT * FROM   news.posts;", function(err, res) {
     if (err) {
       console.log("error: ", err);
       result(null, err);

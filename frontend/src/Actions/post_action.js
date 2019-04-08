@@ -13,8 +13,21 @@ export const getPost = data => {
     data
   };
 };
+export const getCommentErr = message =>{
+  return {
+    type: Types.SELECT_CMT_ERR,
+    message
+  }
+}
+export const getComment = data =>{
+  return {
+    type:Types.SELECT_CMT,
+    data
+  }
+
+}
 export const getAllPost = () => {
-  return dispatch => {
+  return (dispatch) => {
     return callApi("listPost", "GET").then(res => {
       console.log(res);
       if (res.data.length <= 0) {
@@ -26,3 +39,15 @@ export const getAllPost = () => {
     });
   };
 };
+export const getCommentPost =() =>{
+  return (dispatch) =>{
+    return callApi("listComment","GET").then(res =>{
+      if(res.data.length <= 0){
+        dispatch(getCommentErr(res.data))
+      }
+      else{
+        dispatch(getComment(res.data));
+      }
+    })
+  }
+}

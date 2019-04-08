@@ -1,12 +1,14 @@
 "use strict";
 var Posts = require("../model/postsM.js");
 
+
 exports.list_all_posts = function(req, res) {
   Posts.getAllPost(function(err, posts) {
     console.log("controller");
     if (err) res.send(err);
     console.log("res", posts);
     res.send(posts);
+    
   });
 };
 
@@ -47,3 +49,4 @@ exports.delete_a_post = function(req, res) {
     res.json({ message: "DELETE successfully deleted" });
   });
 };
+

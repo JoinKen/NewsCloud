@@ -8,7 +8,7 @@ class Posts extends Component {
         <div className="col-lg-5 post-left">
           <div className="feature-img relative">
             <div className="overlay overlay-bg" />
-            <img className="img-fluid" src="img/l1.jpg" alt="No" />
+            <img className="img-fluid" src={this.props.info.img} alt="No" />
           </div>
           <ul className="tags">
             <li>
@@ -51,7 +51,8 @@ class Posts extends Component {
 }
 const mapStateToProps = state => {
   return {
-    Posts: state.Posts
+    Posts: state.Posts,
+    Comments : state.Comments
   };
 };
 

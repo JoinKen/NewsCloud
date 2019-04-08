@@ -1,10 +1,10 @@
 import * as Types from "../Constant/ActionType";
 var initialState = [];
 
-const post = (state = initialState, action) => {
+const comment = (state = initialState, action) => {
   let json;
   switch (action.type) {
-    case Types.SELECT_POST:
+    case Types.SELECT_CMT:
       json = {
         code: "ok",
         data: action.data
@@ -13,18 +13,15 @@ const post = (state = initialState, action) => {
       console.log(state.code);
       return state;
 
-    case Types.SELECT_POST_ERR:
+    case Types.SELECT_CMT_ERR:
       json = {
         code: "err",
         data: action.message
       };
       state = json;
       return state;
-   
     default:
       return state;
   }
-
-
 };
-export default post;
+export default comment;

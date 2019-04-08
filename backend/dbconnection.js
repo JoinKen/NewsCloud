@@ -16,6 +16,7 @@ if (port === 4205) {
 } else {
 }
 connection.connect(function(err) {
-  if (err) throw err;
+  if (err) throw console.log(`${err}`);
+ 
 });
 module.exports = connection;

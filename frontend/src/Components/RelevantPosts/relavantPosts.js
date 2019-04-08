@@ -1,15 +1,10 @@
-import React, { Component } from "react";
-import * as actions from "../../Actions/post_action";
-// import * as action from '../../Actions/comment_action';
 
-import { connect } from "react-redux";
-import Post from "../LastPosts/postLast";
-import post from "../../Reducer/posts";
+import React, { Component } from 'react'
+import IteamRelevant from '../RelevantPosts/iteamRelevant';
+import {connect} from 'react-redux';
+import * as actions from '../../Actions/post_action';
 
-class listLastPost extends Component {
-  /* nơi đầu tiên dc khởi chạy component
-  khởi tạo các giá trị của state và đọc những giá trị props dc truyền vào
-  */
+class relavantPosts extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,47 +22,51 @@ class listLastPost extends Component {
   // Hàm này gọi khi component dc khởi tạo thông qua constructor
   componentWillMount() {
     this.props.getAllPost();
-    // this.props.getAllComment();
   }
   /* Hàm này dc gọi khi component nhận dc một props mới*/
   componentWillReceiveProps(nextProps) {
     if (nextProps.posts.code === "ok") {
       this.setState({
         posts: nextProps.posts.data,
-        // comments:nextProps.comments.data,
         haveData: true
       });
     }
   }
   showPost = () => {
     let result;
+
     if (this.state.haveData === true) {
       result = this.state.posts.map((item, index) => {
-       if(index >=1 && index < 4)
-          return <Post key={index} info={item} />
+       if(item.topic === "Giải trí")
+         {
+          // topic: 
+            console.log(item.title);
+            return <IteamRelevant key={index} info={item} />
+          
+         }
       });
     } else {
       result = <div>Không có dữ liệu</div>;
     }
     return result;
   };
- 
   render() {
     return (
-      <div className="latest-post-wrap">
-        <h4 className="cat-title">Latest News</h4>
-        {this.showPost()}
-     
+      <div>
+        <div className="relavent-story-post-wrap mt-30">
+  <h4 className="title">Relavent Stories</h4>
+  <div className="relavent-story-list-wrap">
+     {this.showPost()}
+  </div>
+</div>
+
       </div>
-    );
+    )
   }
 }
-// Xác định lấy state nào nào store lưu trữ
-
 const mapStateToProps = state => {
   return {
-    posts: state.posts,
-  
+    posts: state.posts
   };
 };
 
@@ -76,10 +75,7 @@ const mapDispatchToProps = (dispatch, props) => {
     getAllPost: () => {
       dispatch(actions.getAllPost());
     }
-  
   };
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(listLastPost);
+
+export default connect(mapStateToProps,mapDispatchToProps) (relavantPosts)
