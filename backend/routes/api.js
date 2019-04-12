@@ -7,7 +7,10 @@ const comment = require("../controller/Comments");
 const contentPost = require("../controller/ContentsPost");
 const image = require("../controller/Image");
 
-router.get("/listPost", post.list_all_posts);
+router.get("/listPost", post.list_all_posts, function (req, res) {
+    res.send(JSON); //testy
+
+});
 router.post("/createPost", post.create_a_post);
 router.get("/readPost", post.read_a_post);
 router.post("/updatePost", post.update_a_post);

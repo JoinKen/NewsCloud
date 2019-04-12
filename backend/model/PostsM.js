@@ -2,7 +2,7 @@
 var mysql = require("../dbconnection.js");
 
 //Task object constructor
-var Posts = function(post) {
+var Posts = function (post) {
   this.tag = post.tag;
   this.title = post.title;
   this.describe = post.describe;
@@ -16,8 +16,8 @@ var Posts = function(post) {
   //   this.describe = "";
   // }
 };
-Posts.getAllPost = function(result) {
-  mysql.query("SELECT * FROM   news.posts;", function(err, res) {
+Posts.getAllPost = function (result) {
+  mysql.query("SELECT * FROM   news.posts;", function (err, res) {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -27,8 +27,8 @@ Posts.getAllPost = function(result) {
     }
   });
 };
-Posts.createPost = function(newPost, result) {
-  mysql.query("INSERT INTO posts set ?;", newPost, function(err, res) {
+Posts.createPost = function (newPost, result) {
+  mysql.query("INSERT INTO posts set ?;", newPost, function (err, res) {
     if (err) {
       result(err, null);
     } else {
@@ -37,8 +37,8 @@ Posts.createPost = function(newPost, result) {
     }
   });
 };
-Posts.getPostById = function(idPost, result) {
-  mysql.query("SELECT * FROM news.posts WHERE idPost = ? ;", [idPost], function(
+Posts.getPostById = function (idPost, result) {
+  mysql.query("SELECT * FROM news.posts WHERE idPost = ? ;", [idPost], function (
     err,
     res
   ) {
@@ -50,11 +50,11 @@ Posts.getPostById = function(idPost, result) {
     }
   });
 };
-Posts.updateById = function(id, post, result) {
+Posts.updateById = function (id, post, result) {
   mysql.query(
     "UPDATE news.posts SET ? WHERE (idPost = ?);",
     [post, id],
-    function(err, res) {
+    function (err, res) {
       console.log("IT1006", post);
       if (err) {
         console.log("error: ", err);
@@ -65,8 +65,8 @@ Posts.updateById = function(id, post, result) {
     }
   );
 };
-Posts.remove = function(idPost, result) {
-  mysql.query("DELETE FROM news.posts WHERE idPost = ?", [idPost], function(
+Posts.remove = function (idPost, result) {
+  mysql.query("DELETE FROM news.posts WHERE idPost = ?", [idPost], function (
     err,
     res
   ) {
