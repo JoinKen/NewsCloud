@@ -1,5 +1,5 @@
 # NewsCloud
-App week 3 Cloud Computing News Cloud
+App week 3 Cloud Computing News Clouds
 
 # CloudComputing
 Môn điện toán đám mây học cô Đặng Thị Kim Giao
