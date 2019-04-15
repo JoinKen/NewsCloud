@@ -13,5 +13,6 @@ if (
   config.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
 }
 const connection = mysql.createConnection(config);
+console.log("IT1006", connection);
 
 module.exports = connection;
