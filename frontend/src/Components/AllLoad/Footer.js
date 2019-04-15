@@ -78,28 +78,28 @@ class Footer extends Component {
               <h4>Instragram Feed</h4>
               <ul className="instafeed d-flex flex-wrap">
                 <li>
-                  <img src="%PUBLIC_URL%/img/i1.jpg" alt="" />
+                  <img href="%PUBLIC_URL%/img/i1.jpg" alt="j" />
                 </li>
                 <li>
-                  <img src="%PUBLIC_URL%/img/i2.jpg" alt="" />
+                  <img href="%PUBLIC_URL%/img/i2.jpg" alt="j" />
                 </li>
                 <li>
-                  <img src="%PUBLIC_URL%/img/i3.jpg" alt="" />
+                  <img href="%PUBLIC_URL%/img/i3.jpg" alt="j" />
                 </li>
                 <li>
-                  <img src="%PUBLIC_URL%/img/i4.jpg" alt="" />
+                  <img href="%PUBLIC_URL%/img/i4.jpg" alt="j" />
                 </li>
                 <li>
-                  <img src="%PUBLIC_URL%/img/i5.jpg" alt="" />
+                  <img href="%PUBLIC_URL%/img/i5.jpg" alt="j" />
                 </li>
                 <li>
-                  <img src="%PUBLIC_URL%/img/i6.jpg" alt="" />
+                  <img href="%PUBLIC_URL%/img/i6.jpg" alt="j" />
                 </li>
                 <li>
-                  <img src="%PUBLIC_URL%/img/i7.jpg" alt="" />
+                  <img href="%PUBLIC_URL%/img/i7.jpg" alt="j" />
                 </li>
                 <li>
-                  <img src="%PUBLIC_URL%/img/i8.jpg" alt="" />
+                  <img href="%PUBLIC_URL%/img/i8.jpg" alt="j" />
                 </li>
               </ul>
             </div>
