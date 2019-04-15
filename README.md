@@ -1,5 +1,5 @@
 # NewsCloud
-App week 3 Cloud Computing News Cloud
+App week 3 Cloud Computing News Clouds
 
 #Tài nguyên của dự án:
 https://drive.google.com/drive/folders/1UgG59-YHmUrUtTWNylm4GcmiWL1DWEjg?usp=sharing
