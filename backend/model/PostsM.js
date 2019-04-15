@@ -6,18 +6,14 @@ var Posts = function (post) {
   this.tag = post.tag;
   this.title = post.title;
   this.describe = post.describe;
-  // if (!post.tag) {
-  //   this.tag = "";
-  // }
-  // if (!post.title) {
-  //   this.title = "";
-  // }
-  // if (!post.describe) {
-  //   this.describe = "";
-  // }
+  // this.dateAdded = post.dateAdded;
+  this.numberOfRead = post.numberOfRead;
+  this.topic = post.topic;
+  this.img = post.img;
+  
 };
 Posts.getAllPost = function (result) {
-  mysql.query("SELECT * FROM   news.posts;", function (err, res) {
+  mysql.query("SELECT * FROM news.posts;", function (err, res) {
     if (err) {
       console.log("error: ", err);
       result(null, err);
@@ -28,12 +24,16 @@ Posts.getAllPost = function (result) {
   });
 };
 Posts.createPost = function (newPost, result) {
-  mysql.query("INSERT INTO posts set ?;", newPost, function (err, res) {
+  mysql.query("INSERT INTO posts set ? ;", newPost, function (
+    err,
+    res
+  ) {
     if (err) {
+      console.log("error: ", err);
       result(err, null);
     } else {
-      console.log(res.insertId);
-      result(null, res.insertId);
+      console.log("res", res);
+      result(null, res);
     }
   });
 };
@@ -46,12 +46,14 @@ Posts.getPostById = function (idPost, result) {
       console.log("error: ", err);
       result(err, null);
     } else {
+      console.log(res);
       result(null, res);
+      
     }
   });
 };
 Posts.updateById = function (id, post, result) {
-  mysql.query(
+  sql.query(
     "UPDATE news.posts SET ? WHERE (idPost = ?);",
     [post, id],
     function (err, res) {
@@ -78,4 +80,17 @@ Posts.remove = function (idPost, result) {
     }
   });
 };
-module.exports = Posts;
+Posts.ComentPost = function (result) {
+  mysql.query("CALL countCommentPost()", function (err, res) {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+    }
+    else {
+      console.log("comment : ", res[0]);
+      result(null, res[0]);
+    }
+  })
+
+}
+module.exports = Posts;    
