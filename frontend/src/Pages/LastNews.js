@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 //import ListLastPosts from "../Components/LastPosts/listLastPosts";
-import PostPage from '../Components/HomePage/postPage';
-class Posts extends Component {
+import LastestNew from '../Components/HomePage/lastestNew';
+class LastNews extends Component {
   render() {
     return (
       <div>
        <div>
-        <PostPage />
+        <LastestNew />
       </div>
       </div>
     );
   }
 }
-export default Posts;
+export default LastNews;

@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 //import ListLastPosts from "../Components/LastPosts/listLastPosts";
-import PostPage from '../Components/HomePage/postPage';
-class Posts extends Component {
+import ContactForm from '../Components/HomePage/Contact';
+
+class Contact extends Component {
   render() {
     return (
       <div>
        <div>
-        <PostPage />
+        <ContactForm />
       </div>
       </div>
     );
   }
 }
-export default Posts;
+export default Contact;

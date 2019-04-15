@@ -10,10 +10,11 @@ const comment = (state = initialState, action) => {
         data: action.data
       };
       state = json;
-      console.log(state.code);
+      console.log('comment');
+      console.log(state.data);
       return state;
 
-    case Types.SELECT_CMT_ERR:
+    case Types.SELECT_POST_ERR:
       json = {
         code: "err",
         data: action.message
