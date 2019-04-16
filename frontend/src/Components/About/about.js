@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link}  from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class about extends Component {
     render() {
@@ -12,7 +12,7 @@ class about extends Component {
                                 <div className="hero-nav-area">
                                     <h1 className="text-white">About Us</h1>
                                     <p className="text-white link-nav">
-                                    <Link to="/">Home</Link>
+                                        <Link to="/">Home</Link>
                                         {/* <a href="index.html">Home </a>{" "} */}
                                         <span className="lnr lnr-arrow-right" />
                                         <Link to="/About">About us</Link>

@@ -5,9 +5,9 @@ export const SELECT_POST_ERR = "SELECT_POST_ERR";
 export const INSERT_POST = "INSERT_POST";
 
 
-export const SELECT_CMT_ERR ="SELECT_CMT_ERR";
-export const SELECT_CMT ="SELECT_CMT";
+export const SELECT_CMT_ERR = "SELECT_CMT_ERR";
+export const SELECT_CMT = "SELECT_CMT";
 
 export const LOGIN = "LOGIN";
-export const LOGIN_ERR ="LOGIN_ERR";
+export const LOGIN_ERR = "LOGIN_ERR";
 

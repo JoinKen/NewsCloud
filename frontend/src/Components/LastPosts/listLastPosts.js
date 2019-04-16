@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import * as actions from "../../Actions/post_action";
+import * as actions from "../../Actions/post_action.js";
 import { connect } from "react-redux";
 import Post from "../LastPosts/postLast";
 // import post from "../../Reducer/posts";
@@ -13,9 +13,9 @@ class listLastPost extends Component {
     super(props);
     this.state = {
       posts: {},
-      comments: {},
+      //   comments: {},
       haveData: false,
-      haveComment: false,
+      //  haveComment: false,
       idPost: "",
       tag: "",
       title: "",
@@ -30,7 +30,7 @@ class listLastPost extends Component {
   // Hàm này gọi khi component dc khởi tạo thông qua constructor
   componentWillMount() {
     this.props.getAllPost();
-    this.props.getCommentPostAct();
+    //   this.props.getCommentPostAct();
     // this.props.getAllComment();
   }
   /* Hàm này dc gọi khi component nhận dc một props mới*/
@@ -42,13 +42,12 @@ class listLastPost extends Component {
         haveData: true
       });
     }
-    if (nextProps.comments.code === "ok") {
-      this.setState({
-        comments: nextProps.comments.data,
-        haveComment: true
+    // if (nextProps.comments.code === "ok") {
+    //   this.setState({
+    //     comments: nextProps.comments.data,
+    //     haveComment: true
 
-      })
-    }
+    //   })
   }
   showPost = () => {
     let result, x;
@@ -65,9 +64,9 @@ class listLastPost extends Component {
     }
 
     return result;
-  };
+  }
   showIdComment = () => {
-    let cmt,x;
+    let cmt, x;
     let info = [];
     if (this.state.haveComment === true) {
       cmt = this.state.comments.map((item, index) => {
@@ -80,10 +79,9 @@ class listLastPost extends Component {
     }
     return cmt;
 
-  };
-
+  }
   showComment = () => {
-    let cmt,x;
+    let cmt, x;
     let info = [];
     if (this.state.haveComment === true) {
       cmt = this.state.comments.map((item, index) => {
@@ -97,9 +95,8 @@ class listLastPost extends Component {
     }
     return cmt;
 
-  };
-
-  render() {
+  }
+  render = () => {
     return (
       <div className="latest-post-wrap">
         <h4 className="cat-title">Latest News</h4>
@@ -111,9 +108,8 @@ class listLastPost extends Component {
       </div>
     );
   }
+  // Xác định lấy state nào nào store lưu trữ
 }
-// Xác định lấy state nào nào store lưu trữ
-
 const mapStateToProps = state => {
   return {
     posts: state.posts,
@@ -126,13 +122,14 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
     getAllPost: () => {
       dispatch(actions.getAllPost());
-    },
-    getCommentPostAct: () => {
-      dispatch(actions.getCommentPostAct());
     }
+    // getCommentPostAct: () => {
+    //   dispatch(actions.getCommentPostAct());
+    // }
 
   };
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
