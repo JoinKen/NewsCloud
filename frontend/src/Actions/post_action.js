@@ -13,13 +13,12 @@ export const getPost = data => {
     data
   };
 };
-export const getCommentPost = data =>{
-  return {
-    type:Types.SELECT_CMT,
-    data
-  }
-
-}
+// export const getCommentPost = data => {
+//   return {
+//     type: Types.SELECT_CMT,
+//     data
+//   }
+// }
 // export const insertPost = data =>{
 //   return {
 //     type: Types.INSERT_POST,
@@ -29,9 +28,9 @@ export const getCommentPost = data =>{
 export const getAllPost = () => {
   return (dispatch) => {
     return callApi("listPost", "GET").then(res => {
-      console.log('listpost');
+      console.log('listPost');
       console.log(res);
-      if (res.data.length <= 0) {
+      if (!res.data) {
         dispatch(getError(res.data));
       } else {
         console.log(res.data);
@@ -40,18 +39,18 @@ export const getAllPost = () => {
     });
   };
 };
-export const getCommentPostAct =() =>{
-  return (dispatch)=>{
-    return callApi("getCommentPost","GET").then (res =>{
-      if(res.data.length <=0){
-        dispatch(getError(res.data));
-      }
-      else{
-        dispatch(getCommentPost(res.data));
-      }
-    })
-  }
-}
+// export const getCommentPostAct = () => {
+//   return (dispatch) => {
+//     return callApi("getCommentPost", "GET").then(res => {
+//       if (res.data.length <= 0) {
+//         dispatch(getError(res.data));
+//       }
+//       else {
+//         dispatch(getCommentPost(res.data));
+//       }
+//     })
+//   }
+// }
 // export const insertPostAct =(tag,title,des,topic,img) =>{
 //   return (dispatch) =>{
 //     return callApi("createPost","POST",{

@@ -1,1 +1,1 @@
-export const API_URL = "http://localhost:8080";
+export const API_URL = "https://apis-dot-news-cloud-237802.appspot.com";

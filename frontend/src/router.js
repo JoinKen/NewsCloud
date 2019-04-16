@@ -19,29 +19,29 @@ const router = [
     main: () => <Post />
   },
   {
-    path:'/LastNews',
-    exact:false,
-    main:() => <LastNews/>
+    path: '/LastNews',
+    exact: false,
+    main: () => <LastNews />
   },
   {
-    path:'/About',
-    exact:false,
-    main:() => <About/>
+    path: '/About',
+    exact: false,
+    main: () => <About />
   },
   {
-    path:'/Contact',
-    exact:false,
-    main:()=><Contact/>
+    path: '/Contact',
+    exact: false,
+    main: () => <Contact />
   },
   {
-    path:'/Login',
-    exact:false,
-    main:()=><Login/>
+    path: '/Login',
+    exact: false,
+    main: () => <Login />
   },
   {
-    path:'/Admin',
-    exact:false,
-    main:()=><AdminPage/>
+    path: '/Admin',
+    exact: false,
+    main: () => <AdminPage />
   }
 ];
 export default router;

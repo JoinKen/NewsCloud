@@ -1,5 +1,5 @@
 "use strict";
-var Posts = require("../model/postsM.js");
+var Posts = require("../model/PostsM.js");
 
 
 exports.list_all_posts = function(req, res) {

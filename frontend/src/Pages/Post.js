@@ -5,9 +5,9 @@ class Posts extends Component {
   render() {
     return (
       <div>
-       <div>
-        <PostPage />
-      </div>
+        <div>
+          <PostPage />
+        </div>
       </div>
     );
   }

@@ -3,7 +3,7 @@ import "../../App.css";
 // import component
 import Header from "../AllLoad/Header";
 import RelevantPost from '../RelevantPosts/relavantPosts';
-import PostComment from '../PostComment/postComment';
+//import PostComment from '../PostComment/postComment';
 // import LoadComment from '../LoadComment/loadComent';
 import Footer from "../AllLoad/Footer";
 class postPage extends Component {
@@ -12,9 +12,9 @@ class postPage extends Component {
       <div>
         <Header />
         <div className="container">
-            <RelevantPost/>
-          
-            <PostComment/>
+          <RelevantPost />
+          {/* 
+          <PostComment /> */}
         </div>
         {/* <div className="comment">
        

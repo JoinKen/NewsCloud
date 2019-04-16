@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {createStore, applyMiddleware,compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import appReducers from "./Reducer/index";
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -16,17 +16,17 @@ redux store dc khai báo là middleware, thành phần này có nhiệm vụ gi�
 và payload đến dc vs reducer
 */
 const store = createStore(
-    appReducers,
-    composeEnhancers(
-      applyMiddleware(thunk),
-    )
-  );
-  
+  appReducers,
+  composeEnhancers(
+    applyMiddleware(thunk),
+  )
+);
+
 ReactDOM.render(
-    <Provider store = {store}>
-      <App />
-    </Provider>
-    , document.getElementById('root'));
+  <Provider store={store}>
+    <App></App>
+  </Provider>
+  , document.getElementById('root'));
 serviceWorker.unregister();
 
 export default store;
