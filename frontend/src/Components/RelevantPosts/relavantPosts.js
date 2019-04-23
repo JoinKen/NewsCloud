@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react'
 import IteamRelevant from '../RelevantPosts/iteamRelevant';
-import {connect} from 'react-redux';
-import * as actions from '../../Actions/post_action';
+import { connect } from 'react-redux';
+import * as actions from '../../Actions/postaction';
 
 class relavantPosts extends Component {
   constructor(props) {
@@ -14,9 +14,9 @@ class relavantPosts extends Component {
       tag: "",
       title: "",
       describe: "",
-      numberOfRead:"",
-      topic :"",
-      img:""
+      numberOfRead: "",
+      topic: "",
+      img: ""
     };
   }
   // Hàm này gọi khi component dc khởi tạo thông qua constructor
@@ -37,13 +37,12 @@ class relavantPosts extends Component {
 
     if (this.state.haveData === true) {
       result = this.state.posts.map((item, index) => {
-       if(item.topic === "Giải trí")
-         {
+        if (item.topic === "Giải trí") {
           // topic: 
-            console.log(item.title);
-            return <IteamRelevant key={index} info={item} />
-          
-         }
+          console.log(item.title);
+          return <IteamRelevant key={index} info={item} />
+
+        }
       });
     } else {
       result = <div>Không có dữ liệu</div>;
@@ -54,11 +53,11 @@ class relavantPosts extends Component {
     return (
       <div>
         <div className="relavent-story-post-wrap mt-30">
-  <h4 className="title">Relavent Stories</h4>
-  <div className="relavent-story-list-wrap">
-     {this.showPost()}
-  </div>
-</div>
+          <h4 className="title">Relavent Stories</h4>
+          <div className="relavent-story-list-wrap">
+            {this.showPost()}
+          </div>
+        </div>
 
       </div>
     )
@@ -78,4 +77,4 @@ const mapDispatchToProps = (dispatch, props) => {
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (relavantPosts)
+export default connect(mapStateToProps, mapDispatchToProps)(relavantPosts)

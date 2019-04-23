@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import * as actions from "../../Actions/post_action";
+import * as actions from "../../Actions/postaction";
 import { connect } from "react-redux";
 import Post from "../LastPosts/postLast";
 // import post from "../../Reducer/posts";
@@ -38,7 +38,7 @@ class listLastPost extends Component {
     if (nextProps.posts.code === "ok") {
       this.setState({
         posts: nextProps.posts.data,
-        // comments:nextProps.comments.data,
+        //comments:nextProps.comments.data,
         haveData: true
       });
     }
@@ -67,7 +67,7 @@ class listLastPost extends Component {
     return result;
   };
   showIdComment = () => {
-    let cmt,x;
+    let cmt, x;
     let info = [];
     if (this.state.haveComment === true) {
       cmt = this.state.comments.map((item, index) => {
@@ -83,7 +83,7 @@ class listLastPost extends Component {
   };
 
   showComment = () => {
-    let cmt,x;
+    let cmt, x;
     let info = [];
     if (this.state.haveComment === true) {
       cmt = this.state.comments.map((item, index) => {
@@ -103,7 +103,6 @@ class listLastPost extends Component {
     return (
       <div className="latest-post-wrap">
         <h4 className="cat-title">Latest News</h4>
-
         {this.showPost()}
         {/* {this.showComment()} */}
 

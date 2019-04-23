@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import * as actions from '../../Actions/post_action';
+import * as actions from '../../Actions/postaction';
 import TopPostLeft from '../TopPosts/topPostsLeft';
 import { connect } from "react-redux";
 // import TopPostRightTop from '..//TopPosts/topPostsRight';
@@ -16,10 +16,10 @@ class listTopPosts extends Component {
             tag: "",
             title: "",
             describe: "",
-            dateAdded :"",
-            numberOfRead:"",
-            topic:"",
-            img:"",
+            dateAdded: "",
+            numberOfRead: "",
+            topic: "",
+            img: "",
         }
     }
     componentWillMount() {
@@ -38,8 +38,8 @@ class listTopPosts extends Component {
         if (this.state.haveData === true) {
             result = this.state.posts.map((iteam, index) => {
                 // Lấy post thứ 3 trong bảng post csdl load lên
-                if(this.state.posts[1] === iteam)
-                return <TopPostLeft key={index} info={iteam} />
+                if (this.state.posts[1] === iteam)
+                    return <TopPostLeft key={index} info={iteam} />
             });
         }
         else {
@@ -47,16 +47,16 @@ class listTopPosts extends Component {
         }
         return result;
     }
-    showPostRight =() =>{
+    showPostRight = () => {
         let result;
         if (this.state.haveData === true) {
             result = this.state.posts.map((iteam, index) => {
                 console.log(iteam.dateAdded);
                 // Lấy post thứ 3 trong bảng post csdl load lên
                 // dateAdded: "2019-02-01T17:00:00.000Z"
-                if(iteam.dateAdded === '2019-03-01T17:00:00.000Z' || iteam.dateAdded === '2019-0-01T17:00:00.000Z' )
-                // if(this.state.posts[3] === iteam)
-                return <TopPostRight key={index} info={iteam} />
+                if (iteam.dateAdded === '2019-03-01T17:00:00.000Z' || iteam.dateAdded === '2019-0-01T17:00:00.000Z')
+                    // if(this.state.posts[3] === iteam)
+                    return <TopPostRight key={index} info={iteam} />
             });
         }
         else {
@@ -72,12 +72,12 @@ class listTopPosts extends Component {
                     <section className="top-post-area pt-10">
                         <div className="container no-padding">
                             <div className="row small-gutters">
-                            <div className="col-lg-8 top-post-left">
-                                {this.showPostLeft()}
-                                {/* <TopPostLeft/> */}
-                            </div>
+                                <div className="col-lg-8 top-post-left">
+                                    {this.showPostLeft()}
+                                    {/* <TopPostLeft/> */}
+                                </div>
                                 <div className="col-lg-4 top-post-right">
-                              {this.showPostRight()}
+                                    {this.showPostRight()}
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="news-tracker-wrap">

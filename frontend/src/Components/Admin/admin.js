@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import * as actions from '../../Actions/post_action';
+import * as actions from '../../Actions/postaction';
 import Admin_item from './admin_item';
 
 class admin extends Component {
@@ -22,7 +22,7 @@ class admin extends Component {
     }
     componentWillMount() {
         this.props.getAllPost();
-        //this.props.insertPost();
+        this.props.insertPost();
     }
     /* Hàm này dc gọi khi component nhận dc một props mới*/
     componentWillReceiveProps(nextProps) {
@@ -33,7 +33,7 @@ class admin extends Component {
             });
         }
     }
-  
+
     showPost = () => {
         let result;
 
@@ -42,7 +42,7 @@ class admin extends Component {
                 return <Admin_item key={index} info={item} />
             });
         } else {
-            result = <div>Không có dữ liệu</div>;
+            result = "Không có dữ liệu";
         }
         return result;
     };
@@ -127,7 +127,7 @@ class admin extends Component {
                                                             name="image"
                                                         />
                                                     </div>
-                                                   
+
                                                     {/* <button type="submit" className="btn btn-primary">
                                                         Submit
   </button> */}
@@ -137,12 +137,12 @@ class admin extends Component {
                                             </div>
 
                                             <div className="modal-footer">
-                                            <button
+                                                <button
                                                     type="button"
                                                     className="btn btn-success"
                                                     data-dismiss="modal"
                                                 >
-                                                   Thêm
+                                                    Thêm
                             </button>
                                                 <button
                                                     type="button"
@@ -170,7 +170,7 @@ class admin extends Component {
                                     </tr>
                                 </thead>
                                 {this.showPost()}
-                               
+
                             </table>
                         </div>
                     </div>
@@ -190,10 +190,10 @@ const mapDispatchToProps = (dispatch, props) => {
     return {
         getAllPost: () => {
             dispatch(actions.getAllPost());
+        },
+        insertPost: () => {
+            dispatch(actions.insertPostAct());
         }
-        // insertPost :() =>{
-        //     dispatch(actions.insertPostAct());
-        // }
     };
 };
 

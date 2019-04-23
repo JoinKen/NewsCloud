@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
-import * as actions from '../../Actions/user_actions';
+import * as actions from '../../Actions/useractions';
 import { Redirect } from 'react-router-dom';
 
 class login extends Component {

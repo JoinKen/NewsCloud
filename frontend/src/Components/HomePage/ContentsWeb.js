@@ -7,8 +7,6 @@ import AnotherPosts from "../AnotherPosts/anotherPosts";
 
 class Contents extends Component {
   //Code casc thwcs owr day
- 
-
 
   render() {
     return (

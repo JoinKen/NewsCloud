@@ -20,13 +20,14 @@ const post = (state = initialState, action) => {
       };
       state = json;
       return state;
-  //   case Types.INSERT_POST:
-  //   console.log("state post");
-  //   console.log(state);
-  //  state = [...state, action.data]
-  //  return state;
-    
-   
+    case Types.INSERT_POST:
+      console.log("state post");
+      console.log(state);
+      console.log(action.data);
+     // state = state.data.push(action.data);
+      // state = [...state,action.data];
+      return state;
+
     default:
       return state;
   }
