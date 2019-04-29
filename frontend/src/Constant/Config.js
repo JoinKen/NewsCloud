@@ -1,1 +1,0 @@
-export const API_URL = "https://apis-dot-news-cloud-237802.appspot.com";
