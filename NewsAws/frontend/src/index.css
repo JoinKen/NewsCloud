@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+/* .form-bg{
+  background: url(../public/img/g3.jpg);
+  background-size: cover;
+  position: relative;
+} */
+.contact_form{
+  width:60%;
+  margin-top:100px; 
+}
+
+/* .form-bg{ background: #ddd; } */
+.form-horizontal{
+    background: #fff;
+    padding: 80px 50px;
+}
+.form-horizontal .form-group{
+    margin: 0 0 30px 0;
+    position: relative;
+}
+.form-horizontal .form-group:last-child{ margin: 40px 0 0 0; }
+.form-horizontal .form-group i{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    color: #c4c4c4;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.form-horizontal .form-control{
+    height: 50px;
+    background: #fff;
+    border: 2px solid #d9d9d9;
+    box-shadow: none;
+    padding: 0 20px 0 50px;
+    font-size: 16px;
+    color: #7f8291;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.form-horizontal .form-control[type=password]{ padding: 0 105px 0 50px; }
+.form-horizontal .form-control:focus{
+    box-shadow: none;
+    outline: 0 none;
+    border-color: #4b92e3;
+}
+.form-horizontal .form-control::-webkit-input-placeholder,
+.form-horizontal .form-control::-moz-placeholder,
+.form-horizontal .form-control::placeholder{ color: #c4c4c4; }
+.form-horizontal .form-group label{
+    padding: 0 7px;
+    background: #4b92e3;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    top: 9px;
+    left: 15px;
+    transition: all 0.3s ease 0s;
+}
+.form-horizontal .form-group:hover label{
+    opacity: 1;
+    top: -9px;
+}
+.form-horizontal .forgot-pass{
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4b92e3;
+    text-transform: capitalize;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    border-left: 1px solid #d8d8d8;
+    transform: translateY(-50%);
+}
+.form-horizontal .signup{
+    display: inline-block;
+    font-size: 16px;
+    color: #8f8f8f;
+    text-transform: capitalize;
+    margin-top: 8px;
+}
+.form-horizontal .signup a{ color: #4b92e3; }
+.form-horizontal .btn{
+    padding: 8px 30px;
+    background: #4b92e3;
+    float: right;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+.form-horizontal .btn:focus{
+    background: #4b92e3;
+    color: #fff;
+}
+@media only screen and (max-width: 479px){
+    .form-horizontal{ padding: 40px 20px; }
+    .form-horizontal .form-group:last-child{
+        text-align: center;
+        margin-top: 0;
+    }
+    .form-horizontal .signup{
+        display: block;
+        margin-bottom: 10px;
+    }
+    .form-horizontal .btn{ float: none; }
+}
+.form_login{
+  margin-top:100px;
+}
+.admin_content{
+    color: red;
+    text-align: center;
+    margin: 20px 20px;
+}
+.admin_table{
+    margin-bottom:50px;
+}
+.action{
+    display: flex;
+}
+.delete{
+    font-size: 18px;
+    color:blue;
+    margin-right:20px;
+}
+.edit{
+    font-size: 18px;
+    color:red;
+}
+.addPost{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.total_page{
+    padding:50px 50px;
+}
+.form-group label{
+    margin-left:-414px;
+    color:black;
+}
