@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   render() {
@@ -66,15 +67,22 @@ class Header extends Component {
             <nav id="nav-menu-container">
               <ul className="nav-menu">
                 <li className="menu-active">
-                  <a href="index.html">Home</a>
+                <Link to="/">Home</Link>
+                  {/* <a href="index.html">Home</a> */}
                 </li>
                 <li>
-                  <a href="archive.html">Archive</a>
+                <Link to="/Post">Relevant Post</Link>
+                  {/* <a >Relevant Post</a> */}
                 </li>
                 <li>
-                  <a href="category.html">Category</a>
+                  <Link to="/LastNews">Lastest New</Link>
+                  {/* <a href="category.html">Category</a> */}
                 </li>
-                <li className="menu-has-children">
+                <li>
+                  <Link to="/PostImage">Post Image</Link>
+                  {/* <a href="category.html">Category</a> */}
+                </li>
+                {/* <li className="menu-has-children">
                   <a href>Post Types</a>
                   <ul>
                     <li>
@@ -93,12 +101,16 @@ class Header extends Component {
                       <a href="audio-post.html">Audio Post</a>
                     </li>
                   </ul>
+                </li> */}
+                
+                <li>
+                 <Link to="/About">About</Link>
                 </li>
                 <li>
-                  <a href="about.html">About</a>
+                <Link to="/Contact">Contact</Link>
                 </li>
                 <li>
-                  <a href="contact.html">Contact</a>
+                 <Link to="/Login">Login</Link>
                 </li>
               </ul>
             </nav>

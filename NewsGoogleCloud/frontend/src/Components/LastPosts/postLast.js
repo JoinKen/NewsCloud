@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 class Posts extends Component {
   render() {
     return (
+      <div>
       <div className="single-latest-post row align-items-center">
         <div className="col-lg-5 post-left">
           <div className="feature-img relative">
@@ -39,12 +40,13 @@ class Posts extends Component {
             <li>
               <a href="dontSet">
                 <span className="lnr lnr-bubble" />
-                06 Comments
+            06 View
               </a>
             </li>
           </ul>
           <p className="excert">{this.props.info.describe}</p>
         </div>
+      </div>
       </div>
     );
   }
@@ -53,6 +55,7 @@ const mapStateToProps = state => {
   return {
     Posts: state.Posts,
     Comments : state.Comments
+  
   };
 };
 
